@@ -1,0 +1,18 @@
+[Unit]
+Description=Laya model-routing server for pi
+StartLimitIntervalSec=300
+StartLimitBurst=3
+
+[Service]
+ExecStart=%h/.pi/agent/laya-server/.venv/bin/python -I %h/.pi/agent/laya-server/server.py
+Environment=HF_HUB_DISABLE_PROGRESS_BARS=1
+Restart=on-failure
+RestartSec=5
+# Cap Laya (~2.5G) and never let it swap, so it is killed instead of dragging the
+# whole machine down
+MemoryMax=4G
+MemorySwapMax=0
+OOMScoreAdjust=500
+
+[Install]
+WantedBy=default.target

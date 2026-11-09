@@ -1,0 +1,8 @@
+{
+  "mode": "every",
+  "levels": {
+    "low":    { "provider": "spark-48d4", "model": "google/gemma-4-26B-A4B-it" },
+    "medium": { "provider": "spark-1610", "model": "nemotron-3.5-super-vl" },
+    "high":   { "provider": "spark-9ce6", "model": "deepseek-ai/DeepSeek-V4-Flash" }
+  }
+}
